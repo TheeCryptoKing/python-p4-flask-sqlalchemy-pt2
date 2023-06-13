@@ -1,9 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
+#  MetaData is a class provided by SQLAlchemy to manage database metadata and naming conventions.
 
 metadata = MetaData(naming_convention={
     "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
 })
+# This line creates an instance of MetaData and sets a naming convention for foreign keys in the database. The naming convention specified in the dictionary will be used to generate names for foreign key constraints.
 
 db = SQLAlchemy(metadata=metadata)
 
